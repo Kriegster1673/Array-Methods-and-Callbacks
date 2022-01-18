@@ -30,7 +30,6 @@ function getFinals(data) {
 }
 
 console.log(getFinals(fifaData));
-console.log(fifaData['Home Team Name'])
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -76,8 +75,12 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+function getWinnersByYear(array,getFinals,getYears,getWinners) {
+    const winners = getWinners(array,getFinals())
+    const bestYears = getYears(array,getFinals())
+
+    return winners.map((object,index) => `In ${bestYears[index]}, ${object} won the world cup!`)
+    
 }
 
 
